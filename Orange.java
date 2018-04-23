@@ -5,12 +5,13 @@
  */
 public class Orange extends Fruit {
 	
+	static double cost=25;
 	/**
 	 * Constructor of the Orange class
-	 * @param cost
+	 * @param d
 	 * @param offer
 	 */
-	public Orange(float cost, String offer) {
+	public Orange( String offer) {
 		super(cost,offer);
 		
 	}
@@ -19,7 +20,7 @@ public class Orange extends Fruit {
 	 * This method returns the price of orange item
 	 * @return
 	 */
-	public float getOrangePrice() {
+	public double getOrangePrice() {
 		return super.getPrice();
 	}
 

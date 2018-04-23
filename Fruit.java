@@ -7,17 +7,17 @@
  */
 public class Fruit {
 	
-	private float cost;
+	private double cost;
 	private String fruitOffer;
 	
 	
 	/**
 	 * Constructor of the class Fruit
-	 * @param cost cost of the item
+	 * @param d cost of the item
 	 * @param fruitOffer offer on the item
 	 */
-	public Fruit(float cost, String fruitOffer) {
-		this.cost=cost;
+	public Fruit(double d, String fruitOffer) {
+		this.cost=d;
 		this.fruitOffer=fruitOffer;
 	}
 	
@@ -25,7 +25,7 @@ public class Fruit {
 	 * This method returns the price of the item
 	 * @return cost
 	 */
-	public float getPrice() {
+	public double getPrice() {
 		return this.cost;
 	}
 	
