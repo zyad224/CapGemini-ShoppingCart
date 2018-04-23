@@ -16,7 +16,8 @@ public class checkoutSystem {
 	
 	private ArrayList<Fruit> itemsScanned ;
 	private double totalPrice;
-	
+	private ArrayList<Fruit> shoppingBag=new ArrayList<Fruit>();
+	private int  orangeCounter;
 	/**
 	 * Constructor of the checkout system
 	 */
@@ -65,11 +66,26 @@ public class checkoutSystem {
 		
 		Iterator itr = itemsScanned.iterator();
 		
+		
 		while (itr.hasNext()) {
 			 Fruit e= (Fruit) itr.next();
+			 shoppingBag.add(e);
+			 if(e.getPrice()==60) {
+				 shoppingBag.add(new Apple("0)"));
+			 }
+			 else if(e.getPrice()==25) {
+				 orangeCounter++;
+				 if(orangeCounter==3) {
+				    totalPrice-=25;
+				    orangeCounter=0;
+				 }
+				 
+			 }
 			totalPrice+=e.getPrice();
 		}
 		
+		  System.out.println("shopping bag"+shoppingBag);
+
 		return totalPrice/100.0;
 	}
 
@@ -85,6 +101,7 @@ public static void main(String args[])
    c.scanItems();
    totalPrice=c.calculateTotalPrice();
    System.out.println("Total Price="+totalPrice + " pounds");
+   
     
          
 }
